@@ -24,6 +24,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.concurrent.Worker.State;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import netscape.javascript.JSObject;
 import org.w3c.dom.Document;
 
@@ -76,7 +77,8 @@ public class WebContainerController implements Initializable {
     Label label;
     
     
-    
+    @FXML
+    private MenuItem menuItem_user;
     @FXML
     WebView webView;
     private WebEngine webEngine;
@@ -103,7 +105,7 @@ public class WebContainerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+          menuItem_user.setText(SignIn.currentUser.getDisplayName());
         try {
             webEngine = webView.getEngine();
                       //  webView.setContextMenuEnabled(false);
